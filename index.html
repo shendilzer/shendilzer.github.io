@@ -2,106 +2,621 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Shawn Michael · Aspiring Web Designer CV</title>
     
-    <title>
-        CV-Shawn Michael
-</title>
-    
-    <link rel="stylesheet" href="stylesheet/main.css">
-    </head>
-    <body>
-    <header class="primary-header container group">
-    <h3 class="logo">
-        <a href="index.html"><h3> Shawn Michael-CV</h3></a>
-        
-        </h1>
+    <!-- Google Fonts + simple reset & responsive grid -->
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        
-        <nav class="nav primary-nav">
+        body {
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background: #f4f7fc;
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* container system */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ----- TYPOGRAPHY & LINKS ----- */
+        a {
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        /* header / logo area */
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #1f4e79, #2c7da0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .logo h3 {
+            margin: 0;
+            font-size: 1.9rem;
+        }
+
+        /* navigation */
+        .nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            justify-content: flex-end;
+        }
+
+        .bttn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            background: #ffffff;
+            color: #1e4663;
+            border: 1px solid #cbd5e1;
+            transition: 0.2s;
+        }
+
+        .bttn-alt {
+            background: #eef2f5;
+            color: #0f3b5c;
+            border: 1px solid #b9d0e3;
+        }
+
+        .bttn-alt:hover {
+            background: #d9e6f2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+            border-color: #2c7da0;
+        }
+
+        /* hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem 3rem;
+            background: linear-gradient(145deg, #e9f0f5 0%, #ffffff 100%);
+            border-radius: 48px;
+            margin: 1.5rem auto;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+        }
+
+        .img-circle {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            transition: transform 0.25s;
+        }
+        .img-circle:hover {
+            transform: scale(1.02);
+        }
+
+        .intro-text .name h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #155f7c, #2c5282);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .underline {
+            width: 80px;
+            height: 4px;
+            background: #2c7da0;
+            margin: 1rem auto;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .Web h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #2c5a74;
+            background: #e2edf2;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            margin-top: 0.5rem;
+        }
+
+        .hero p {
+            margin-top: 1.8rem;
+            font-size: 1.2rem;
+        }
+        .hero p u {
+            text-decoration-thickness: 3px;
+            text-underline-offset: 8px;
+        }
+
+        /* ----- RESPONSIVE GRID (flex-based) ----- */
+        .row {
+            margin: 3rem 0;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .col-1-3 {
+            flex: 1 1 280px;
+            min-width: 240px;
+            background: white;
+            border-radius: 32px;
+            padding: 1.8rem 1rem;
+            text-align: center;
+            transition: all 0.25s;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            border: 1px solid rgba(44,125,160,0.2);
+        }
+        .col-1-3:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 28px -12px rgba(0,0,0,0.15);
+            border-color: #2c7da0;
+        }
+
+        .s img {
+            max-width: 80px;
+            margin-bottom: 1.2rem;
+            transition: 0.2s;
+        }
+
+        .s a {
+            display: inline-block;
+        }
+
+        /* chat button special style */
+        .col-1-3 .bttn-alt {
+            font-size: 1.3rem;
+            padding: 0.8rem 1.8rem;
+            background: #1f6390;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .col-1-3 .bttn-alt:hover {
+            background: #0f4b6e;
+            transform: scale(1.02);
+        }
+
+        /* footer */
+        .primary-footer {
+            background: #102b3b;
+            color: #cddfe7;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-radius: 32px 32px 0 0;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            color: #f0f6fa;
+        }
+
+        .list-inline {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .btn-social {
+            background: #2c5a74;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn-social i {
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        .btn-social:hover {
+            background: #3e86ad;
+            transform: translateY(-2px);
+        }
+
+        /* chat modal (optional simple chat simulation) */
+        .chat-now-btn {
+            cursor: pointer;
+        }
+
+        /* simple chat widget (modal style) */
+        .chat-overlay {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+            z-index: 1000;
+            overflow: hidden;
+            border: 1px solid #cbdde9;
+            animation: fadeUp 0.25s ease;
+        }
+        .chat-header {
+            background: #1f4e79;
+            color: white;
+            padding: 12px 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-body {
+            padding: 16px;
+            max-height: 280px;
+            overflow-y: auto;
+            background: #fefefe;
+        }
+        .chat-input-area {
+            display: flex;
+            border-top: 1px solid #ddd;
+            padding: 8px;
+            background: #f9f9ff;
+        }
+        .chat-input-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            outline: none;
+        }
+        .chat-input-area button {
+            background: #2c7da0;
+            border: none;
+            margin-left: 8px;
+            border-radius: 30px;
+            padding: 0 18px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+        .msg-bubble {
+            background: #e6f0f5;
+            padding: 8px 12px;
+            border-radius: 20px;
+            margin: 8px 0;
+            font-size: 0.85rem;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* fully responsive touches */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .hero {
+                margin: 1rem 0.5rem;
+                padding: 2rem 1rem;
+            }
+            .intro-text .name h1 {
+                font-size: 1.8rem;
+            }
+            .Web h2 {
+                font-size: 1.2rem;
+            }
+            .hero p h1 {
+                font-size: 1.3rem;
+            }
+            .nav ul {
+                justify-content: center;
+                margin-top: 0.5rem;
+            }
+            .logo {
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+            .primary-header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .grid {
+                gap: 1.2rem;
+            }
+            .col-1-3 {
+                flex: 1 1 260px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .img-circle {
+                width: 120px;
+                height: 120px;
+            }
+            .bttn {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
+            }
+            .list-inline {
+                gap: 1rem;
+            }
+        }
+
+        /* header flex layout */
+        .primary-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.2rem;
+            padding-bottom: 0.8rem;
+        }
+        @media (max-width: 650px) {
+            .primary-header {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .primary-nav ul {
+                justify-content: center;
+            }
+        }
+
+        .btn-social i {
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* fix old weird center */
+        center, .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header class="primary-header container group">
+    <div class="logo">
+        <a href="index.html"><h3>Shawn Michael · CV</h3></a>
+    </div>
+    <nav class="nav primary-nav">
         <ul>
-            <li><a class="bttn bttn-alt" href="http://facebook.com">Facebook</a></li>
-            <li>   <a class="bttn bttn-alt" href="http://gmail.com">Gmail</a></li>
-            <li>  <a class="bttn bttn-alt" href="http://instagram.com">Instagram</a></li>
-            </ul>
-            
-            
-        </nav>
-        
-        
-        
-        </header>
-    
-        <section class="hero container">
-         <img src="stylesheet/img/profilepicture,.png" class="img-circle" alt="Circular Image">
-                    <div class="intro-text">
-                        <span class="name"> <a hrf="http://akatzuki.smshawnex@facebook.com"><h1> Hi I'm Shawn Michael</h1></a></span>
-                    <hr class="underline">
-                    <span class="Web"><h2>Aspiring to be a Web Designer</h2></span>
-                                <center><p><h1><u>" Work Hard For The Future "</u></h1></p></center>
-        </section>
-         
+            <li><a class="bttn bttn-alt" href="http://facebook.com" target="_blank">📘 Facebook</a></li>
+            <li><a class="bttn bttn-alt" href="http://gmail.com" target="_blank">📧 Gmail</a></li>
+            <li><a class="bttn bttn-alt" href="http://instagram.com" target="_blank">📸 Instagram</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="row">
-      <div class="grid">
+<section class="hero container">
+    <img src="stylesheet/img/profilepicture,.png" class="img-circle" alt="Shawn Michael profile picture" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=SM';">
+    <div class="intro-text">
+        <span class="name"><h1>👋 Hi, I'm Shawn Michael</h1></span>
+        <hr class="underline">
+        <div class="Web"><h2>✨ Aspiring Web Designer & Creative Thinker</h2></div>
+        <center><p><h1 style="font-size: 1.4rem;">💪 "Work Hard For The Future" 💪</h1></p></center>
+    </div>
+</section>
 
-       
-        <section class="s col-1-3">
-            
-            
-            
-             <a href="Work.html">
-          <img src="stylesheet/img/WORK.png" alt="Work">
+<!-- 3 cards: Work, Chat, Profile (fully responsive) -->
+<section class="row">
+    <div class="grid container">
+        <!-- Work Card -->
+        <div class="s col-1-3">
+            <a href="Work.html">
+                <img src="stylesheet/img/WORK.png" alt="Work portfolio" onerror="this.src='https://placehold.co/100x100?text=💼'">
+                <h3 style="margin-top: 0.5rem; color:#1f4e79;">My Work</h3>
+                <p style="font-size: 0.9rem; color:#2c5a74;">Projects & experience</p>
             </a>
-            
-            
-         
-        </section><section class="s col-1-3">
-          
-        <center> <a class="bttn bttn-alt" href="chat.html">Chat Now</a></center>
-        </section><section class="s col-1-3">
-           <a href="Profile.html">
-          <img src="stylesheet/img/PROFILE.png" alt="Profile">
-          </a>
-          
-        </section>
-          
+        </div>
         
-
-      </div>
-    </section>
-           
-           
-            
-        </section><section class="s col-1-3">
-      
-            </section>
+        <!-- Chat Now Card (opens interactive chat widget) -->
+        <div class="s col-1-3">
+            <a class="bttn bttn-alt chat-now-btn" id="openChatBtn" style="cursor:pointer; display: inline-block;">💬 Chat Now</a>
+            <div style="margin-top: 1rem;">
+                <p style="font-size: 0.8rem; color:#2b6c8f;">✨ Let's connect – quick chat</p>
+            </div>
+        </div>
         
-     
-    
-        <footer class="primary-footer container group">
-<nav class="nav primary-nav">
-     
-                    <div class="footer-col col-md-4">
-                      <center>  <h3>SocialMedia Accounts</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="http://akatzuki.smshawnex@facebook.com" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                              
-                                
-                            <li>
-                                <a href="http://sshendilzer@gmail.com" class="btn-social btn-outline"><i class="fa fa-fw fa-google"></i></a>
-                            </li>
-                                
-                        </ul>
-                          </center>
-                    </div>
-                    
-            </nav>
-        </footer>
-    
+        <!-- Profile Card -->
+        <div class="s col-1-3">
+            <a href="Profile.html">
+                <img src="stylesheet/img/PROFILE.png" alt="Profile details" onerror="this.src='https://placehold.co/100x100?text=👤'">
+                <h3 style="margin-top: 0.5rem; color:#1f4e79;">Profile</h3>
+                <p style="font-size: 0.9rem; color:#2c5a74;">Bio & skills</p>
+            </a>
+        </div>
+    </div>
+</section>
 
-    </body>
+<!-- CHAT WIDGET (floating & fully responsive) -->
+<div id="chatWidget" class="chat-overlay">
+    <div class="chat-header">
+        <span>💬 Chat with Shawn</span>
+        <button class="close-chat" id="closeChatBtn">&times;</button>
+    </div>
+    <div class="chat-body" id="chatMessages">
+        <div class="msg-bubble">🤝 Hey! I'm Shawn — ask me anything about web design, or just say hi!</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
+        <button id="sendChatBtn">Send</button>
+    </div>
+</div>
 
+<footer class="primary-footer container group">
+    <nav class="nav primary-nav">
+        <div class="footer-col">
+            <center>
+                <h3>📱 SocialMedia Accounts</h3>
+                <ul class="list-inline">
+                    <li>
+                        <a href="http://akatzuki.smshawnex@facebook.com" class="btn-social btn-outline" target="_blank"><i>📘 Facebook</i></a>
+                    </li>
+                    <li>
+                        <a href="http://sshendilzer@gmail.com" class="btn-social btn-outline" target="_blank"><i>📧 Gmail</i></a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com" class="btn-social btn-outline" target="_blank"><i>📸 Instagram</i></a>
+                    </li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.8;">© 2026 Shawn Michael — Aspiring Web Designer</p>
+            </center>
+        </div>
+    </nav>
+</footer>
 
+<!-- simple interactive chat + responsive improvements -->
+<script>
+    (function() {
+        // Chat widget elements
+        const chatWidget = document.getElementById('chatWidget');
+        const openChatBtn = document.getElementById('openChatBtn');
+        const closeChatBtn = document.getElementById('closeChatBtn');
+        const sendBtn = document.getElementById('sendChatBtn');
+        const chatInput = document.getElementById('chatInput');
+        const chatMessagesDiv = document.getElementById('chatMessages');
+
+        // Helper: add message to chat
+        function addMessage(text, isUser = true) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'msg-bubble';
+            msgDiv.style.backgroundColor = isUser ? '#d9eef9' : '#e6f0f5';
+            msgDiv.style.textAlign = isUser ? 'right' : 'left';
+            msgDiv.style.borderRadius = '20px';
+            msgDiv.style.margin = '8px 0';
+            msgDiv.style.padding = '8px 12px';
+            msgDiv.innerHTML = isUser ? `<strong>You:</strong> ${escapeHtml(text)}` : `<strong>Shawn:</strong> ${escapeHtml(text)}`;
+            chatMessagesDiv.appendChild(msgDiv);
+            chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight;
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+                return c;
+            });
+        }
+
+        // bot auto-reply logic (friendly)
+        function botReply(userMsg) {
+            const lowerMsg = userMsg.toLowerCase();
+            let reply = "";
+            if (lowerMsg.includes("hi") || lowerMsg.includes("hello") || lowerMsg.includes("hey")) {
+                reply = "Hey there! 👋 Glad to chat. I'm passionate about web design & front-end dev!";
+            } else if (lowerMsg.includes("work") || lowerMsg.includes("portfolio")) {
+                reply = "I’m currently building creative web projects. Check out my 'Work' section for updates soon! 💻";
+            } else if (lowerMsg.includes("skills") || lowerMsg.includes("design")) {
+                reply = "I work with HTML, CSS, JavaScript, and responsive layouts. Always learning new frameworks! 🚀";
+            } else if (lowerMsg.includes("future") || lowerMsg.includes("goal")) {
+                reply = "My future goal: become a full-stack creative designer & build meaningful digital experiences! ✨";
+            } else {
+                reply = "Thanks for reaching out! Feel free to connect via social media or drop me a message anytime. 😊";
+            }
+            setTimeout(() => {
+                addMessage(reply, false);
+            }, 350);
+        }
+
+        // send message handler
+        function sendMessage() {
+            let msg = chatInput.value.trim();
+            if (msg === "") return;
+            addMessage(msg, true);
+            chatInput.value = "";
+            botReply(msg);
+        }
+
+        // open/close chat widget
+        if (openChatBtn) {
+            openChatBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                chatWidget.style.display = 'block';
+                // slight auto focus
+                setTimeout(() => chatInput.focus(), 150);
+            });
+        }
+        if (closeChatBtn) {
+            closeChatBtn.addEventListener('click', () => {
+                chatWidget.style.display = 'none';
+            });
+        }
+        if (sendBtn) {
+            sendBtn.addEventListener('click', sendMessage);
+        }
+        if (chatInput) {
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') sendMessage();
+            });
+        }
+        // close if click outside? (optional friendly)
+        window.addEventListener('click', function(e) {
+            if (chatWidget.style.display === 'block') {
+                if (!chatWidget.contains(e.target) && e.target !== openChatBtn && !openChatBtn.contains(e.target)) {
+                    // optional: do not auto-close aggressively - but we keep it user friendly
+                    // better to keep open until manually closed
+                }
+            }
+        });
+        // initial hidden
+        chatWidget.style.display = 'none';
+
+        // Fix for placeholder image errors (replace broken images)
+        const allImgs = document.querySelectorAll('img');
+        allImgs.forEach(img => {
+            img.addEventListener('error', function() {
+                if (this.src.includes('profilepicture,.png') || this.src.includes('WORK.png') || this.src.includes('PROFILE.png')) {
+                    if (this.alt === 'Shawn Michael profile picture') {
+                        this.src = 'https://placehold.co/200x200?text=Shawn';
+                    } else if (this.alt === 'Work portfolio') {
+                        this.src = 'https://placehold.co/100x100?text=💼';
+                    } else if (this.alt === 'Profile details') {
+                        this.src = 'https://placehold.co/100x100?text=👤';
+                    } else {
+                        this.src = 'https://placehold.co/100x100?text=CV';
+                    }
+                }
+            });
+        });
+    })();
+</script>
+
+<!-- ensure responsive text align for footer -->
+</body>
 </html>
